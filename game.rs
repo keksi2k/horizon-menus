@@ -49,8 +49,8 @@ pub(super) fn reverse(game: &Game<'_>) -> bool {
     game.keys.contains(&KeyCode::ShiftLeft) || game.keys.contains(&KeyCode::ShiftRight)
 }
 
-/// Opens mod `id`'s page in Options > Mods over the game, as Horizon's own tweaks key opens its
-/// page: Esc goes straight back to playing. False when there is no such page (not in a world,
+/// Opens mod `id`'s page in Options > Mods over the game; Esc goes back to the pause menu, as
+/// after Horizon's own pages opened in a world. False when there is no such page (not in a world,
 /// or the mod isn't listed).
 #[allow(dead_code)]
 pub(super) fn open_page(game: &mut Game<'_>, id: &str) -> bool {
@@ -64,7 +64,6 @@ pub(super) fn open_page(game: &mut Game<'_>, id: &str) -> bool {
     let Some(i) = find(game) else { return false };
     game.capture(false);
     game.open_options_at(false, horizon_client::options_ui::Page::NativeMod(i));
-    game.options_to_game = true;
     game.native_settings_refresh(i);
     true
 }
