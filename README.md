@@ -1,5 +1,10 @@
 # horizon-menus
 
+> **Not maintained, archived.** This library was made for Horizon's `.hnmod` native mods (the mixin bundles).
+> Horizon's launchers from 0.2.70 on load only `.hmod` mods built on the mod API, which has its own mod screens and
+> settings pages; Horizonmatica 0.4.0 and later use those. The code stays here for the older releases that include
+> it as a submodule.
+
 Menus and settings for [Horizon](https://github.com/horizon-rust/horizon) native mods.
 
 Horizon gives every native mod a page in **Options > Mods**: a list of buttons, asked for again after each click.
